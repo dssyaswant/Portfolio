@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devata Sri Sai Yaswant - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Updated header with professional navy blue gradient */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    margin: 0 auto 1rem;
+    background-image: url('profile.jpg');
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        /* Updated nav hover color to match new navy theme */
+        .nav-links a:hover {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            animation: fadeIn 1s ease;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        /* Updated section title underline to navy blue */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #1e3a8a;
+        }
+
+        /* About Section */
+        .about-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Updated education section border color */
+        .education-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #1e3a8a;
+        }
+
+        .education-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .institution {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .duration {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Updated project tech background to match navy theme */
+        .project-tech {
+            background: #eff6ff;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .project-features {
+            list-style: none;
+        }
+
+        .project-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .project-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        /* Updated project link colors */
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #1e3a8a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .project-link:hover {
+            background: #1d4ed8;
+        }
+
+        /* Completely redesigned skills section with professional layout */
+        .skills-container {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid #1e3a8a;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .skill-category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .skill-category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .skill-category h3 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .skills-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 3px solid #3b82f6;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            background: #eff6ff;
+            transform: translateX(5px);
+        }
+
+        .skill-name {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .skill-icon {
+            width: 24px;
+            height: 24px;
+            color: #1e3a8a;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .skill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            transition: background 0.3s;
+        }
+
+        .skill-dot.active {
+            background: #3b82f6;
+        }
+
+        .skill-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .cert-icon {
+            font-size: 2rem;
+            color: #1e3a8a;
+        }
+
+        .cert-info h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-year {
+            color: #666;
+            font-style: italic;
+        }
+
+        .cert-link {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Additional Information Section */
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .additional-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .additional-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .additional-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Updated additional card list items to match navy theme */
+        .additional-card li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background: #eff6ff;
+            border-radius: 5px;
+            color: #1e3a8a;
+            font-weight: 500;
+        }
+
+        /* Updated footer color to match navy theme */
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            /* Improved mobile styles for skills section */
+            .skills-container {
+                padding: 1.5rem;
+            }
+            
+            .skill-category {
+                padding: 1.5rem;
+            }
+            
+            .skill-category-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .skill-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+                padding: 0.8rem;
+            }
+            
+            .skill-level {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .skill-dots {
+                flex-grow: 1;
+                max-width: 120px;
+            }
+        }
+
+        /* Additional mobile optimization for very small screens */
+        @media (max-width: 480px) {
+            .skills-container {
+                padding: 1rem;
+            }
+            
+            .skill-category {
+                padding: 1rem;
+            }
+            
+            .skill-name {
+                font-size: 0.9rem;
+            }
+            
+            .skill-text {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Updated scroll button color */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img"></div>
+                <h1>Devata Sri Sai Yaswant</h1>
+                <p class="title">B.Tech CSE Student | Web Developer | Cloud Enthusiast</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+917989780057">+91 7989780057</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:2200030838cseh@gmail.com">2200030838cseh@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/dssyaswant" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/dssyaswant" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#additional">Additional</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>B.Tech CSE student at KL University with an interest in web development and cloud technologies. Experienced in projects using Spring Boot, Django and PostgreSQL. Certified in AWS, RedHat, and NPTEL. Keen to grow in software development and DevOps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                <div class="institution">KL University, Vijayawada</div>
+                <div class="duration">July 2022 – Present</div>
+                <p><strong>GPA:</strong> 9.23/10</p>
+            </div>
+            <div class="education-item">
+                <h3>Higher Secondary Education (MPC)</h3>
+                <div class="institution">Sri Chaitanya Junior College, Tuni</div>
+                <div class="duration">2020 – 2022</div>
+                <p><strong>Marks:</strong> 883/1000</p>
+            </div>
+            <div class="education-item">
+                <h3>Secondary School Certificate</h3>
+                <div class="institution">Gowtham Model School, Payakaraopeta</div>
+                <div class="duration">2020</div>
+                <p><strong>Marks:</strong> 595/600</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-tint"></i> Online Blood Donation Management System</h3>
+                    <div class="project-tech">Django, PostgreSQL, Bootstrap</div>
+                    <p><strong>Duration:</strong> Feb 2024 – Apr 2024</p>
+                    <ul class="project-features">
+                        <li>Developed donor registration system with profile management and history tracking</li>
+                        <li>Implemented real-time blood availability dashboard for hospitals</li>
+                        <li>Integrated SMS/email notification system for donation reminders</li>
+                    </ul>
+                    <a href="https://github.com/dssyaswant/online_blood_donation_management" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-vote-yea"></i> Election Monitoring System</h3>
+                    <div class="project-tech">React, Spring Boot, MySQL</div>
+                    <p><strong>Duration:</strong> June 2024 – July 2024</p>
+                    <ul class="project-features">
+                        <li>Designed and implemented admin and booth-level user dashboards</li>
+                        <li>Integrated real-time voter tracking and complaint handling system</li>
+                        <li>Enabled secure authentication and data consistency using JWT and Spring Security</li>
+                    </ul>
+                    <a href="https://github.com/dssyaswant/ElectionMonitoringSystem" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completely redesigned Skills Section with professional layout and skill levels -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Programming Languages</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-java skill-icon"></i>
+                                    <span>Java</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-python skill-icon"></i>
+                                    <span>Python</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fas fa-code skill-icon"></i>
+                                    <span>C</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Web Technologies</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-react skill-icon"></i>
+                                    <span>React</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active "></div>
+                                        <div class="skill-dot "></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-html5 skill-icon"></i>
+                                    <span>HTML/CSS</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-node-js skill-icon"></i>
+                                    <span>Node.js</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fas fa-code skill-icon"></i>
+                                    <span>Django</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3>Databases</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fas fa-database skill-icon"></i>
+                                    <span>MySQL</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fas fa-elephant skill-icon"></i>
+                                    <span>PostgreSQL</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fas fa-leaf skill-icon"></i>
+                                    <span>MongoDB</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloud & DevOps</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-aws skill-icon"></i>
+                                    <span>AWS</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-docker skill-icon"></i>
+                                    <span>Docker</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-jenkins skill-icon"></i>
+                                    <span>Jenkins</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <i class="fab fa-git-alt skill-icon"></i>
+                                    <span>Git/GitHub</span>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="skill-dots">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot "></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                    <span class="skill-text">Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h4><a href="https://www.credly.com/badges/31ae23a4-1f39-40f3-bbb3-69ef4a9d64fc/public_url" target="_blank" class="cert-link">ServiceNow Certified System Administrator (CSA)</a></h4>
+                        <div class="cert-year">2025</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                    <div class="cert-info">
+                        <h4><a href="https://www.credly.com/badges/276b415d-2b3a-41ae-97b0-2d614a9f879f/public_url" target="_blank" class="cert-link">AWS Certified Cloud Practitioner</a></h4>
+                        <div class="cert-year">2023</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fab fa-redhat"></i></div>
+                    <div class="cert-info">
+                        <h4><a href="https://www.credly.com/badges/a065cb86-dc9b-471b-97b5-8c020b469534/public_url" target="_blank" class="cert-link">Red Hat Certified Enterprise Application Developer</a></h4>
+                        <div class="cert-year">2023</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h4><a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS79S4445125822062528" target="_blank" class="cert-link">NPTEL - Programming in Java</a></h4>
+                        <div class="cert-year">2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Information Section -->
+    <section id="additional">
+        <div class="container">
+            <h2 class="section-title">Additional Information</h2>
+            <div class="additional-grid">
+                <div class="additional-card">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>English (Professional Proficiency)</li>
+                        <li>Telugu (Native)</li>
+                        <li>Hindi (Conversational)</li>
+                    </ul>
+                </div>
+                <div class="additional-card">
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Cloud Computing</li>
+                        <li>DevOps</li>
+                        <li>Open Source Contribution</li>
+                    </ul>
+                </div>
+                <div class="additional-card">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Adaptability</li>
+                        <li>Continuous Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Devata Sri Sai Yaswant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
